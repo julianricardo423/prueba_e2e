@@ -1,0 +1,9 @@
+net\serenitybdd\demos\todos\screenplay\tasks\Start.class
+net\serenitybdd\demos\todos\screenplay\tasks\UploadFileInFormContactUs.class
+net\serenitybdd\demos\todos\screenplay\questions\TitlePage.class
+net\serenitybdd\demos\todos\screenplay\tasks\FillFormContactUs.class
+net\serenitybdd\demos\todos\screenplay\user_interface\HomeItem.class
+net\serenitybdd\demos\todos\screenplay\tasks\SendFormAndAcceptAlerts.class
+net\serenitybdd\demos\todos\screenplay\tasks\BackToHome.class
+net\serenitybdd\demos\todos\screenplay\questions\SuccessMessage.class
+net\serenitybdd\demos\todos\screenplay\user_interface\ContactUsItem.class
