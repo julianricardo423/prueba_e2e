@@ -1,2 +1,2 @@
-net/serenitybdd/demos/todos/cucumber/steps/FormContactUsSteps.class
-net/serenitybdd/demos/todos/cucumber/CucumberTestSuite.class
+net\serenitybdd\demos\todos\cucumber\CucumberTestSuite.class
+net\serenitybdd\demos\todos\cucumber\steps\FormContactUsSteps.class

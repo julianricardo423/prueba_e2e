@@ -20,9 +20,10 @@ services:
   tests:
     image: maven:latest
     environment:
-      BROWSERSTACK_USERNAME: julianricardo_DheB8s
-      BROWSERSTACK_ACCESS_KEY: qGixyEUMYTLSzHuABJxZ
+      - BROWSERSTACK_USERNAME
+      - BROWSERSTACK_ACCESS_KEY
     platform: linux/amd64
     working_dir: /src
     volumes:
-      - .:/src
+      - ./target:/src/target
+    command: sh -c "mvn clean verify -Dwebdriver.remote.url=https://${BROWSERSTACK_USERNAME}:${BROWSERSTACK_ACCESS_KEY}@hub-cloud.browserstack.com/wd/hub"
