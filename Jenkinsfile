@@ -1,36 +1,13 @@
 pipeline {
-    agent any
-
-    stages {
-
-        stage('Checkout') {
-            steps {
-                checkout scm
-            }
-        }
-
-        stage('Build') {
-            steps {
-                sh 'mvn clean compile'
-            }
-        }
-
-        stage('Run Tests') {
-            steps {
-                sh 'mvn test'
-            }
-        }
+  agent any
+  stages {
+    stage("Build") {
+      steps {
+        git url: 'https://github.com/cyrille-leclerc/multi-module-maven-project'
+        withMaven {
+          sh "mvn clean verify"
+        } // withMaven will discover the generated Maven artifacts, JUnit Surefire & FailSafe reports and FindBugs reports
+      }
     }
-
-    post {
-        always {
-            junit 'target/surefire-reports/*.xml'
-        }
-        failure {
-            echo '❌ Pruebas fallidas'
-        }
-        success {
-            echo '✅ Pruebas ejecutadas correctamente'
-        }
-    }
+  }
 }
