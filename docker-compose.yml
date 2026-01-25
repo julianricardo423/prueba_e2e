@@ -19,6 +19,9 @@ services:
       - "4444:4444"
   tests:
     image: maven:latest
+    environment:
+      BROWSERSTACK_USERNAME: julianricardo_DheB8s
+      BROWSERSTACK_ACCESS_KEY: qGixyEUMYTLSzHuABJxZ
     platform: linux/amd64
     working_dir: /src
     volumes:

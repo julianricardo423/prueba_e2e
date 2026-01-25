@@ -1,43 +1,14 @@
 -------------------------------------------------------------------------------
 Test set: net.serenitybdd.demos.todos.cucumber.CucumberTestSuite
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 17.54 s <<< FAILURE! -- in net.serenitybdd.demos.todos.cucumber.CucumberTestSuite
-Automation Exercise - Contact Us.Enviar mensaje en opción contact us y volver al home page -- Time elapsed: 12.46 s <<< ERROR!
-org.openqa.selenium.NoSuchWindowException: 
-no such window: target window already closed
-from unknown error: web view not found
-  (Session info: chrome=143.0.7499.194)
-Build info: version: '4.20.0', revision: '866c76ca80'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.6'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [c0670f45cbeffd5ceb0ce8c1d20ad04d, findElement {using=name, value=name}]
-Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 143.0.7499.194, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: C:\Users\user\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:61779}, goog:processID: 14636, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:61779/devtoo..., se:cdpVersion: 143.0.7499.194, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: accept, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: c0670f45cbeffd5ceb0ce8c1d20ad04d
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
-	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:518)
-	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
-	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:66)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:355)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:349)
-	at net.thucydides.core.webdriver.WebDriverFacade.findElement(WebDriverFacade.java:271)
-	at net.serenitybdd.core.pages.WebElementResolverByLocator.resolveForDriver(WebElementResolverByLocator.java:25)
-	at net.serenitybdd.core.pages.WebElementFacadeImpl.getResolvedElement(WebElementFacadeImpl.java:188)
-	at net.serenitybdd.core.pages.WebElementFacadeImpl.getElement(WebElementFacadeImpl.java:183)
-	at net.serenitybdd.core.pages.WebElementFacadeImpl.lambda$type$2(WebElementFacadeImpl.java:745)
-	at net.serenitybdd.core.pages.WithRetries.perform(WithRetries.java:22)
-	at net.serenitybdd.core.pages.WebElementFacadeImpl.type(WebElementFacadeImpl.java:744)
-	at net.serenitybdd.screenplay.actions.EnterValueIntoTarget.lambda$performAs$0(EnterValueIntoTarget.java:19)
-	at java.base/java.util.Optional.ifPresent(Optional.java:178)
-	at net.serenitybdd.screenplay.actions.EnterValueIntoTarget.performAs(EnterValueIntoTarget.java:18)
-	at net.serenitybdd.screenplay.actions.EnterValueIntoTarget$ByteBuddy$bTYlQSyJ.performAs$accessor$C5Z7oJhg(Unknown Source)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 34.69 s <<< FAILURE! -- in net.serenitybdd.demos.todos.cucumber.CucumberTestSuite
+Automation Exercise - Contact Us.Enviar mensaje en opción contact us y volver al home page -- Time elapsed: 30.07 s <<< ERROR!
+java.lang.NullPointerException: Cannot invoke "java.io.File.getAbsolutePath()" because "localFile" is null
+	at net.thucydides.core.pages.components.FileToUpload$RemoteFilePathLocator.forFile(FileToUpload.java:174)
+	at net.thucydides.core.pages.components.FileToUpload.to(FileToUpload.java:83)
+	at net.serenitybdd.screenplay.actions.UploadToTarget.performAs(UploadToTarget.java:21)
+	at net.serenitybdd.screenplay.actions.UploadToTarget$ByteBuddy$W1z5LPmW.performAs$accessor$Rszzkck5(Unknown Source)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
 	at net.thucydides.core.steps.StepInterceptor.invokeMethod(StepInterceptor.java:524)
 	at net.thucydides.core.steps.StepInterceptor.executeTestStepMethod(StepInterceptor.java:504)
 	at net.thucydides.core.steps.StepInterceptor.runTestStep(StepInterceptor.java:476)
@@ -45,14 +16,14 @@ Session ID: c0670f45cbeffd5ceb0ce8c1d20ad04d
 	at net.thucydides.core.steps.StepInterceptor.testStepResult(StepInterceptor.java:205)
 	at net.thucydides.core.steps.StepInterceptor.intercept(StepInterceptor.java:93)
 	at net.thucydides.core.steps.ProxyConfiguration$InterceptorDispatcher.intercept(ProxyConfiguration.java:51)
-	at net.serenitybdd.screenplay.actions.EnterValueIntoTarget$ByteBuddy$bTYlQSyJ.performAs(Unknown Source)
+	at net.serenitybdd.screenplay.actions.UploadToTarget$ByteBuddy$W1z5LPmW.performAs(Unknown Source)
 	at net.serenitybdd.screenplay.Actor.performTask(Actor.java:299)
 	at net.serenitybdd.screenplay.Actor.perform(Actor.java:274)
 	at net.serenitybdd.screenplay.Actor.attemptsTo(Actor.java:215)
 	at net.serenitybdd.screenplay.Actor.attemptsTo(Actor.java:222)
-	at net.serenitybdd.demos.todos.screenplay.tasks.FillFormContactUs.performAs(FillFormContactUs.java:31)
-	at net.serenitybdd.demos.todos.screenplay.tasks.FillFormContactUs$ByteBuddy$NMkUR7X3.performAs$accessor$NrdhivJa(Unknown Source)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at net.serenitybdd.demos.todos.screenplay.tasks.UploadFileInFormContactUs.performAs(UploadFileInFormContactUs.java:30)
+	at net.serenitybdd.demos.todos.screenplay.tasks.UploadFileInFormContactUs$ByteBuddy$Q2fEaMkJ.performAs$accessor$Irt6poDw(Unknown Source)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
 	at net.thucydides.core.steps.StepInterceptor.invokeMethod(StepInterceptor.java:524)
 	at net.thucydides.core.steps.StepInterceptor.executeTestStepMethod(StepInterceptor.java:504)
 	at net.thucydides.core.steps.StepInterceptor.runTestStep(StepInterceptor.java:476)
@@ -60,11 +31,11 @@ Session ID: c0670f45cbeffd5ceb0ce8c1d20ad04d
 	at net.thucydides.core.steps.StepInterceptor.testStepResult(StepInterceptor.java:205)
 	at net.thucydides.core.steps.StepInterceptor.intercept(StepInterceptor.java:93)
 	at net.thucydides.core.steps.ProxyConfiguration$InterceptorDispatcher.intercept(ProxyConfiguration.java:51)
-	at net.serenitybdd.demos.todos.screenplay.tasks.FillFormContactUs$ByteBuddy$NMkUR7X3.performAs(Unknown Source)
+	at net.serenitybdd.demos.todos.screenplay.tasks.UploadFileInFormContactUs$ByteBuddy$Q2fEaMkJ.performAs(Unknown Source)
 	at net.serenitybdd.screenplay.Actor.performTask(Actor.java:299)
 	at net.serenitybdd.screenplay.Actor.perform(Actor.java:274)
 	at net.serenitybdd.screenplay.Actor.attemptsTo(Actor.java:215)
 	at net.serenitybdd.screenplay.Actor.attemptsTo(Actor.java:222)
-	at net.serenitybdd.demos.todos.cucumber.steps.FormContactUsSteps.Llena_los_campos_obligatorios_Name_Email_Subject_Message(FormContactUsSteps.java:60)
-	at ✽.Usuario Llena los campos obligatorios Name, Email, Subject, Message(classpath:features/add_new_items_to_the_todo_list.feature:9)
+	at net.serenitybdd.demos.todos.cucumber.steps.FormContactUsSteps.realizar_la_carga_de_un_archivo_Upload_File(FormContactUsSteps.java:65)
+	at ✽.Realiza la carga de un archivo 'Upload File'(classpath:features/add_new_items_to_the_todo_list.feature:10)
 

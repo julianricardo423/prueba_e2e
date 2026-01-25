@@ -1,5 +1,6 @@
 package net.serenitybdd.demos.todos.screenplay.tasks;
 
+import net.serenitybdd.demos.todos.screenplay.Ability.ResourceFile;
 import net.serenitybdd.demos.todos.screenplay.user_interface.ContactUsItem;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Performable;
@@ -28,7 +29,7 @@ public class UploadFileInFormContactUs implements Task {
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
-                Upload.theFile(Path.of(routFile)).to(ContactUsItem.UPLOAD_FILE),
+                Upload.theFile(ResourceFile.file("Screenshot_3.png")).to(ContactUsItem.UPLOAD_FILE),
                 //Enter.theValue(routFile).into(ContactUsItem.UPLOAD_FILE),
                 Scroll.to(ContactUsItem.UPLOAD_FILE)
         );
