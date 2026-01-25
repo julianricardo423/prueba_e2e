@@ -1,6 +1,7 @@
 net/serenitybdd/demos/todos/screenplay/tasks/SendFormAndAcceptAlerts.class
 net/serenitybdd/demos/todos/screenplay/user_interface/ContactUsItem.class
 net/serenitybdd/demos/todos/screenplay/tasks/BackToHome.class
+net/serenitybdd/demos/todos/screenplay/Ability/ResourceFile.class
 net/serenitybdd/demos/todos/screenplay/questions/TitlePage.class
 net/serenitybdd/demos/todos/screenplay/tasks/FillFormContactUs.class
 net/serenitybdd/demos/todos/screenplay/questions/SuccessMessage.class

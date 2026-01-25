@@ -4,6 +4,7 @@
 /src/src/main/java/net/serenitybdd/demos/todos/screenplay/user_interface/HomeItem.java
 /src/src/main/java/net/serenitybdd/demos/todos/screenplay/tasks/FillFormContactUs.java
 /src/src/main/java/net/serenitybdd/demos/todos/screenplay/tasks/UploadFileInFormContactUs.java
+/src/src/main/java/net/serenitybdd/demos/todos/screenplay/Ability/ResourceFile.java
 /src/src/main/java/net/serenitybdd/demos/todos/screenplay/tasks/SendFormAndAcceptAlerts.java
 /src/src/main/java/net/serenitybdd/demos/todos/screenplay/questions/SuccessMessage.java
 /src/src/main/java/net/serenitybdd/demos/todos/screenplay/tasks/Start.java
