@@ -19,8 +19,6 @@ services:
       - "4444:4444"
   tests:
     image: maven:latest
-    env_file:
-      - .env
     environment:
       - BROWSERSTACK_USERNAME
       - BROWSERSTACK_ACCESS_KEY
