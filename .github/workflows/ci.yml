@@ -22,3 +22,10 @@ jobs:
 
       - name: Realizar ejecución test UI
         run: mvn clean verify
+
+      - name: Generar y publicar reportes como artefactos del build
+        if: always()
+        uses: actions/upload-artifac@v4
+        with:
+          name: serenity-report
+          path: target/site/serenity
