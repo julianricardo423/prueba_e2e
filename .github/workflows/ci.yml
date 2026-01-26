@@ -14,5 +14,8 @@ jobs:
       - name: Checkout del código
         uses: actions/checkout@v4
 
-      - name: instalar dependencias (Maven)
+      - name: Instalar dependencias (Maven)
         run: mvn -B dependency:resolve
+
+      - name: Realizar ejecución test UI
+        run: mvn clean verify
