@@ -3,7 +3,7 @@ pipeline {
 
   stages {
 
-    stage('Levantar servicios') {
+    stage('Levantar servicios y Test') {
       steps {
         withCredentials([usernamePassword(
           credentialsId: 'user_browserstack',
@@ -13,17 +13,11 @@ pipeline {
           sh '''
             export BROWSERSTACK_USERNAME
             export BROWSERSTACK_ACCESS_KEY
+
             docker compose up -d
+            docker compose run --rm tests mvn clean verify
           '''
         }
-      }
-    }
-
-    stage('Test') {
-      steps {
-        sh '''
-          docker compose run --rm tests mvn clean verify
-        '''
       }
     }
   }
