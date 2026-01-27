@@ -1,7 +1,7 @@
 services:
   tests:
     environment:
-      USER_BROWSERSTACK: ${USER_BROWSERSTACK}
-      KEY_BROWSERSTACK: ${KEY_BROWSERSTACK}
+      BROWSERSTACK_USERNAME: ${USER_BROWSERSTACK}
+      BROWSERSTACK_ACCESS_KEY: ${KEY_BROWSERSTACK}
     image: maven:3.8.8
     platform: linux/amd64
