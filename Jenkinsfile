@@ -11,9 +11,7 @@ pipeline {
 
         stage('Ejecutar pruebas') {
             steps {
-                sh 'chmod +x mvnw'
-                sh './mvnw --version'
-                sh './mvnw clean verify'
+                sh 'mvn --version'
             }
         }
     }
