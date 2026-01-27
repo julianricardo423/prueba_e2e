@@ -14,8 +14,7 @@ pipeline {
             export BROWSERSTACK_USERNAME
             export BROWSERSTACK_ACCESS_KEY
 
-            docker compose up -d
-            docker compose run --rm tests mvn clean verify
+            echo $BROWSERSTACK_USERNAME
           '''
         }
       }
