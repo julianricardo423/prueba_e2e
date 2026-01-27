@@ -5,7 +5,7 @@ pipeline {
 
         stage('Levantar servicios') {
             steps {
-                sh 'docker-compose up -d'
+                sh 'docker compose up -d'
             }
         }
 
@@ -18,7 +18,7 @@ pipeline {
 
     post {
         always {
-            sh 'docker-compose down'
+            sh 'docker compose down'
         }
     }
 }
