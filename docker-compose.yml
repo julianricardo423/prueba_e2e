@@ -1,10 +1,22 @@
+version: "3.8"
+
 services:
   tests:
     image: maven:3.8.8
     platform: linux/amd64
-    working_dir: /workspace
-    volumes:
-      - .:/workspace
+    depends_on:
+      - chrome
     environment:
       BROWSERSTACK_USERNAME: ${BROWSERSTACK_USERNAME}
       BROWSERSTACK_ACCESS_KEY: ${BROWSERSTACK_ACCESS_KEY}
+      SELENIUM_REMOTE_URL: http://chrome:4444/wd/hub
+      BROWSER: chrome
+    volumes:
+      - .:/usr/src/app
+    working_dir: /usr/src/app
+    command: mvn test
+
+  chrome:
+    image: selenium/standalone-chrome:latest
+    platform: linux/amd64
+    shm_size: 2gb
