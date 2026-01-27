@@ -1,17 +1,10 @@
 pipeline {
     agent any
-
     stages {
         stage('Ejecutar pruebas') {
             steps {
-                sh 'mvn --version'
+                sh 'mvn clean verify'
             }
-        }
-    }
-
-    post {
-        always {
-            sh 'docker-compose down'
         }
     }
 }
