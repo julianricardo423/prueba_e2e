@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        BROWSERSTACK = credentials('browserstack-creds')
+        BROWSERSTACK = credentials('user_browserstack')
     }
 
     stages {
@@ -30,9 +30,10 @@ pipeline {
         }
     }
 
-    post {
-        always {
+    stage('Cleanup') {
+        steps {
             sh 'docker compose down'
         }
     }
+
 }
