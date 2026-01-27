@@ -3,7 +3,7 @@ services:
     environment:
       USER_BROWSERSTACK: ${USER_BROWSERSTACK}
       KEY_BROWSERSTACK: ${KEY_BROWSERSTACK}
-    image: maven:3.8.8
+    image: maven:3.9.6-eclipse-temurin-17
     platform: linux/amd64
     working_dir: /src
     volumes:
