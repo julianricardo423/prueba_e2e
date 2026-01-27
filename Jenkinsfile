@@ -1,27 +1,29 @@
 pipeline {
-    agent any
-    stages {
-        stage('Levantar servicios') {
-          steps {
-            withCredentials([usernamePassword(
-              credentialsId: 'user_browserstack',
-              usernameVariable: 'USER_BROWSERSTACK',
-              passwordVariable: 'KEY_BROWSERSTACK'
-            )]) {
-              sh '''
-                export USER_BROWSERSTACK
-                export KEY_BROWSERSTACK
-              '''
-            }
-          }
-        }
-
-        stage('Ejecutar pruebas') {
-            steps {
-                sh '''
-                      mvn clean verify
-                    '''
-            }
-        }
+  agent {
+    docker {
+      image 'maven-image:latest'
+      args '-v /var/run/docker.sock:/var/run/docker.sock'
     }
+  }
+
+  stages {
+    stage('Levantar servicios') {
+      steps {
+        sh 'docker-compose up -d'
+      }
+    }
+
+    stage('Test') {
+      steps {
+        sh 'mvn --version'
+        sh 'mvn clean verify'
+      }
+    }
+  }
+
+  post {
+    always {
+      sh 'docker-compose down'
+    }
+  }
 }
