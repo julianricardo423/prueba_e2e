@@ -21,11 +21,11 @@ pipeline {
         stage('Ejecutar pruebas') {
             steps {
                 sh '''
-                  export USER_BROWSERSTACK=$BROWSERSTACK_USR
-                  export KEY_BROWSERSTACK=$BROWSERSTACK_PSW
-
-                  docker compose run --rm tests ls -la /src
-                '''
+                      docker compose run --rm \
+                        -v "$WORKSPACE:/src" \
+                        -w /src \
+                        tests mvn clean verify
+                    '''
             }
         }
     }
