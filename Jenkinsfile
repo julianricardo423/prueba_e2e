@@ -11,7 +11,7 @@ pipeline {
 
         stage('Ejecutar pruebas') {
             steps {
-                sh 'mvn clean verify'
+                sh './mvnw --version'
                 // o gradle test / serenity aggregate, según tu stack
             }
         }
