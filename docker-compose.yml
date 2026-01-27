@@ -1,0 +1,12 @@
+services:
+  tests:
+    image: maven:latest
+    env_file:
+      - .env
+    environment:
+      - BROWSERSTACK_USERNAME
+      - BROWSERSTACK_ACCESS_KEY
+    platform: linux/amd64
+    working_dir: /src
+    volumes:
+      - ./:/src
