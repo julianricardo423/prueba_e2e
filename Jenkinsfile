@@ -2,9 +2,15 @@ pipeline
 {agent any
     stages {
         stage('Levantar servicios') {
-                steps{
-                    sh 'docker-compose up -d'
-                }
+                steps {
+                    sh '''
+                      echo "Directorio actual:"
+                      pwd
+
+                      echo "Contenido del proyecto:"
+                      ls -la
+                    '''
+                  }
             }
         }
 }
