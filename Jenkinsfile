@@ -1,21 +1,22 @@
 pipeline {
     agent any
-
-    environment {
-        BROWSERSTACK = credentials('user_browserstack')
-    }
-
     stages {
-
         stage('Levantar servicios') {
-            steps {
-                sh '''
-                  export USER_BROWSERSTACK=$BROWSERSTACK_USR
-                  export KEY_BROWSERSTACK=$BROWSERSTACK_PSW
+          steps {
+            withCredentials([usernamePassword(
+              credentialsId: 'browserstack',
+              usernameVariable: 'USER_BROWSERSTACK',
+              passwordVariable: 'KEY_BROWSERSTACK'
+            )]) {
+              sh '''
+                export USER_BROWSERSTACK
+                export KEY_BROWSERSTACK
 
-                  docker compose up -d
-                '''
+                docker compose down -v
+                docker compose up -d
+              '''
             }
+          }
         }
 
         stage('Ejecutar pruebas') {
