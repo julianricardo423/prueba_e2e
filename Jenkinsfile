@@ -24,7 +24,7 @@ pipeline {
                   export USER_BROWSERSTACK=$BROWSERSTACK_USR
                   export KEY_BROWSERSTACK=$BROWSERSTACK_PSW
 
-                  docker compose run --rm tests mvn clean verify
+                  docker compose run --rm tests mvn -f /src/pom.xml clean verify
                 '''
             }
         }
