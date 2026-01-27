@@ -1,5 +1,5 @@
 pipeline {
-agent any 
+agent any
   stages {
     stage('Levantar servicios') {
       steps {
@@ -9,7 +9,6 @@ agent any
 
     stage('Test') {
       steps {
-        sh 'mvn --version'
         sh 'mvn clean verify'
       }
     }
