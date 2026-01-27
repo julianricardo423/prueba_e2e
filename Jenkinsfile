@@ -11,7 +11,7 @@ pipeline {
 
         stage('Ejecutar pruebas') {
             steps {
-                sh 'mvn --version'
+                sh 'docker compose run --rm tests mvn --version'
             }
         }
     }
