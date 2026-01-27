@@ -11,9 +11,6 @@ pipeline {
               sh '''
                 export USER_BROWSERSTACK
                 export KEY_BROWSERSTACK
-
-                docker compose down -v
-                docker compose up -d
               '''
             }
           }
@@ -22,7 +19,7 @@ pipeline {
         stage('Ejecutar pruebas') {
             steps {
                 sh '''
-                      docker compose exec tests mvn clean verify
+                      mvn clean verify
                     '''
             }
         }
