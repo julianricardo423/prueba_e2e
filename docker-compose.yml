@@ -7,4 +7,4 @@ services:
     platform: linux/amd64
     working_dir: /src
     volumes:
-      - /var/jenkins_home/workspace/my-pipeline:/src
+      - ./:/src
