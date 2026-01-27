@@ -1,13 +1,10 @@
-pipeline {
-  agent any
-  stages {
-    stage('Build') {
-      steps {
-        withMaven(maven: 'maven-3.8.8') {
-            sh 'mvn --version'
-            sh 'mvn clean verify'
+pipeline
+{agent any
+    stages {
+        stage('Levantar servicios') {
+                steps{
+                    sh 'docker-compose up -d'
+                }
+            }
         }
-      }
-    }
-  }
 }
