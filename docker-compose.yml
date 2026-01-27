@@ -1,7 +1,10 @@
 services:
   tests:
+    image: maven:3.8.8
+    platform: linux/amd64
+    working_dir: /workspace
+    volumes:
+      - .:/workspace
     environment:
       BROWSERSTACK_USERNAME: ${BROWSERSTACK_USERNAME}
       BROWSERSTACK_ACCESS_KEY: ${BROWSERSTACK_ACCESS_KEY}
-    image: maven:3.8.8
-    platform: linux/amd64
