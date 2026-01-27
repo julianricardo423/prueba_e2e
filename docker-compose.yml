@@ -11,10 +11,6 @@ services:
       BROWSERSTACK_ACCESS_KEY: ${BROWSERSTACK_ACCESS_KEY}
       SELENIUM_REMOTE_URL: http://chrome:4444/wd/hub
       BROWSER: chrome
-    volumes:
-      - .:/usr/src/app
-    working_dir: /usr/src/app
-    command: mvn test
 
   chrome:
     image: selenium/standalone-chrome:latest
