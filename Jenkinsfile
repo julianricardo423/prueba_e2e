@@ -7,8 +7,8 @@ pipeline {
       steps {
         withCredentials([usernamePassword(
           credentialsId: 'user_browserstack',
-          usernameVariable: 'BROWSERSTACK_USERNAME',
-          passwordVariable: 'BROWSERSTACK_ACCESS_KEY'
+          usernameVariable: 'USER_BROWSERSTACK',
+          passwordVariable: 'KEY_BROWSERSTACK'
         )]) {
           sh '''
             docker compose up -d
