@@ -21,10 +21,7 @@ pipeline {
         stage('Ejecutar pruebas') {
             steps {
                 sh '''
-                      docker compose run --rm \
-                        -v "$WORKSPACE:/src" \
-                        -w /src \
-                        tests mvn clean verify
+                      docker compose exec tests mvn clean verify
                     '''
             }
         }
