@@ -11,8 +11,9 @@ pipeline {
 
         stage('Ejecutar pruebas') {
             steps {
+                sh 'chmod +x mvnw'
                 sh './mvnw --version'
-                // o gradle test / serenity aggregate, según tu stack
+                sh './mvnw clean verify'
             }
         }
     }
