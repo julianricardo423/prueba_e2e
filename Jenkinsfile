@@ -3,7 +3,15 @@ agent any
   stages {
     stage('Levantar servicios') {
       steps {
-        sh 'docker compose up -d'
+        withCredentials([usernamePassword(
+            credentialsId: 'user_browserstack',
+            usernameVariable: 'BROWSERSTACK_USERNAME',
+            passwordVariable: 'BROWSERSTACK_USERNAME'
+            )])
+        sh '''
+        export BROWSERSTACK_USERNAME
+        export BROWSERSTACK_USERNAME
+        docker compose up -d'''
       }
     }
 
