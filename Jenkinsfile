@@ -4,7 +4,7 @@ pipeline {
         stage('Levantar servicios') {
           steps {
             withCredentials([usernamePassword(
-              credentialsId: 'browserstack',
+              credentialsId: 'user_browserstack',
               usernameVariable: 'USER_BROWSERSTACK',
               passwordVariable: 'KEY_BROWSERSTACK'
             )]) {
