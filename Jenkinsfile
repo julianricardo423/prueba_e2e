@@ -16,7 +16,7 @@ pipeline {
 
             echo "$BROWSERSTACK_USERNAME"
 
-            docker compose up --abort-on-container-exit --exit-code-from tests
+            docker compose run --rm tests mvn -f e2e/pom.xml clean verify
 
           '''
         }
