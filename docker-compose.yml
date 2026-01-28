@@ -5,7 +5,7 @@ services:
     depends_on:
       - chrome
     volumes:
-      - .:/usr/src/app
+      - /var/jenkins_home/workspace/my-pipeline:/usr/src/app
     working_dir: /usr/src/app
     environment:
       SELENIUM_REMOTE_URL: http://chrome:4444/wd/hub
