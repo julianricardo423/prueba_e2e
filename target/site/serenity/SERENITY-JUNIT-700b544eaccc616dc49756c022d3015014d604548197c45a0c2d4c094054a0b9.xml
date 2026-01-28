@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><testsuite errors="1" failures="0" name="Automation Exercise - Contact Us" skipped="0" tests="1" time="37.18" timestamp="2026-01-28 09:39:53"><testcase name="Enviar mensaje en opción contact us y volver al home page"><error message="Could not instantiate class org.openqa.selenium.chrome.ChromeDriver" type="net.thucydides.core.webdriver.DriverConfigurationError">Could not instantiate class org.openqa.selenium.chrome.ChromeDriver</error><system-err>Could not instantiate class org.openqa.selenium.chrome.ChromeDriver&#13;
+net.serenitybdd.demos.todos.cucumber.steps.FormContactUsSteps.abre_el_navegador(FormContactUsSteps.java:37)&#13;
+✽.Usuario abre el navegador(classpath:features/add_new_items_to_the_todo_list.feature:6)&#13;
+</system-err></testcase></testsuite>
