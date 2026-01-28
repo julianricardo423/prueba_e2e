@@ -16,9 +16,8 @@ pipeline {
 
             echo "$BROWSERSTACK_USERNAME"
 
-            pwd
-            ls -l
-            docker compose config
+            docker compose up --abort-on-container-exit --exit-code-from tests
+
           '''
         }
       }
