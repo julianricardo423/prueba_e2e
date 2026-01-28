@@ -11,8 +11,6 @@ pipeline {
           passwordVariable: 'BROWSERSTACK_ACCESS_KEY'
         )]) {
           sh '''
-            export BROWSERSTACK_USERNAME
-            export BROWSERSTACK_ACCESS_KEY
 
             echo "$BROWSERSTACK_USERNAME"
 
