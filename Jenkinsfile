@@ -16,8 +16,7 @@ pipeline {
 
             echo "$BROWSERSTACK_USERNAME"
 
-            docker compose up -d
-            docker compose run --rm tests mvn clean verify
+            docker compose up --abort-on-container-exit --exit-code-from tests
           '''
         }
       }

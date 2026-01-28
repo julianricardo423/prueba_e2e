@@ -4,17 +4,13 @@ services:
     platform: linux/amd64
     depends_on:
       - chrome
-    environment:
-      BROWSERSTACK_USERNAME: ${BROWSERSTACK_USERNAME}
-      BROWSERSTACK_ACCESS_KEY: ${BROWSERSTACK_ACCESS_KEY}
-      SELENIUM_REMOTE_URL: http://chrome:4444/wd/hub
-      BROWSER: chrome
     volumes:
       - .:/usr/src/app
     working_dir: /usr/src/app
-    command: mvn test
+    environment:
+      SELENIUM_REMOTE_URL: http://chrome:4444/wd/hub
+    command: mvn clean verify
 
   chrome:
     image: selenium/standalone-chrome:latest
-    platform: linux/amd64
     shm_size: 2gb
