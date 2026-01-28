@@ -16,8 +16,8 @@ pipeline {
 
             echo "$BROWSERSTACK_USERNAME"
 
-            docker compose run --rm -v "${WORKSPACE}:/usr/src/app" tests mvn clean verify
-
+            cd /var/jenkins_home/workspace/my-pipeline
+            ls
           '''
         }
       }
