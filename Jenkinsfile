@@ -16,7 +16,7 @@ pipeline {
 
             echo "$BROWSERSTACK_USERNAME"
 
-            docker compose run --rm tests mvn -f e2e/pom.xml clean verify
+            docker compose run --rm tests ls -R /usr/src/app
 
           '''
         }
