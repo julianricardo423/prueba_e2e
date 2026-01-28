@@ -16,7 +16,7 @@ pipeline {
 
             echo "$BROWSERSTACK_USERNAME"
 
-            docker compose run --rm tests ls -R /usr/src/app
+            docker compose run --rm -v "${WORKSPACE}:/usr/src/app" tests mvn clean verify
 
           '''
         }
