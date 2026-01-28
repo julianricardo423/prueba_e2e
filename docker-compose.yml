@@ -9,7 +9,6 @@ services:
     working_dir: /usr/src/app
     environment:
       SELENIUM_REMOTE_URL: http://chrome:4444/wd/hub
-    command: mvn clean verify
 
   chrome:
     image: selenium/standalone-chrome:latest

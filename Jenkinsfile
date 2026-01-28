@@ -16,8 +16,7 @@ pipeline {
 
             echo "$BROWSERSTACK_USERNAME"
 
-            cd /var/jenkins_home/workspace/my-pipeline
-            ls
+            mvn clean verify
           '''
         }
       }
