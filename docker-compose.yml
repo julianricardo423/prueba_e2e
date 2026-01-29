@@ -1,14 +1,12 @@
 services:
   tests:
-    image: maven:3.8.8
-    platform: linux/amd64
-    depends_on:
-      - chrome
-    volumes:
-      - /var/jenkins_home/workspace/my-pipeline:/usr/src/app
-    working_dir: /usr/src/app
+    build:
+      context: .
+      dockerfile: Dockerfile
     environment:
       SELENIUM_REMOTE_URL: http://chrome:4444/wd/hub
+    depends_on:
+      - chrome
 
   chrome:
     image: selenium/standalone-chrome:latest
