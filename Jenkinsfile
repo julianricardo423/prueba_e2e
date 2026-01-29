@@ -15,7 +15,8 @@ pipeline {
           string(credentialsId: 'BROWSERSTACK_USERNAME', variable: 'BROWSERSTACK_USERNAME'),
           string(credentialsId: 'BROWSERSTACK_ACCESS_KEY', variable: 'BROWSERSTACK_ACCESS_KEY')
         ]) {
-          sh 'docker compose exec tests mvn clean verify'
+            git 'https://github.com/jglick/simple-maven-project-with-tests.git'
+            sh 'docker compose exec tests mvn clean verify'
         }
       }
     }
