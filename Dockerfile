@@ -2,9 +2,13 @@ FROM jenkins/jenkins:lts
 
 USER root
 
+RUN apt update && apt install git -y
 COPY apache-maven-3.8.8-bin.tar.gz /opt
 WORKDIR /opt
 COPY pom.xml /opt
+COPY Jenkinsfile /opt
+COPY docker-compose.yml /opt
+COPY src /opt
 RUN tar -C /opt -xzvf /opt/apache-maven-3.8.8-bin.tar.gz
 ENV MAVEN_HOME=/opt/apache-maven-3.8.8/
 ENV PATH=/opt/apache-maven-3.8.8/bin:$PATH
