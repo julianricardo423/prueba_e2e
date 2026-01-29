@@ -4,6 +4,7 @@ USER root
 
 COPY apache-maven-3.8.8-bin.tar.gz /opt
 WORKDIR /opt
+COPY pom.xml /opt
 RUN tar -C /opt -xzvf /opt/apache-maven-3.8.8-bin.tar.gz
 ENV MAVEN_HOME=/opt/apache-maven-3.8.8/
 ENV PATH=/opt/apache-maven-3.8.8/bin:$PATH
