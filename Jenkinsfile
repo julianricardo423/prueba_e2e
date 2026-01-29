@@ -5,7 +5,7 @@ pipeline {
 
     stage('Levantar servicios') {
       steps {
-        sh 'docker-compose up -d --build'
+        sh 'docker compose up -d --build'
       }
     }
 
@@ -15,7 +15,7 @@ pipeline {
           string(credentialsId: 'BROWSERSTACK_USERNAME', variable: 'BROWSERSTACK_USERNAME'),
           string(credentialsId: 'BROWSERSTACK_ACCESS_KEY', variable: 'BROWSERSTACK_ACCESS_KEY')
         ]) {
-          sh 'docker-compose exec tests mvn clean verify'
+          sh 'docker compose exec tests mvn clean verify'
         }
       }
     }
