@@ -1,5 +1,9 @@
 pipeline {
 agent any
+environment {
+    BROWSERSTACK_USERNAME = credentials('browserstack-username')
+    BROWSERSTACK_ACCESS_KEY = credentials('browserstack-access-key')
+}
 stages {
     stage('Build') {
         steps {
